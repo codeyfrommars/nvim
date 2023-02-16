@@ -32,6 +32,14 @@ return packer.startup(function(use)
 
 	-- use("bluz71/vim-nightfly-guicolors") -- color scheme
 	use("rose-pine/neovim") -- color scheme
+	use("shaunsingh/seoul256.nvim")
+	use({
+		"mcchrish/zenbones.nvim",
+		-- Optionally install Lush. Allows for more configuration or extending the colorscheme
+		-- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+		-- In Vim, compat mode is turned on as Lush only works in Neovim.
+		requires = "rktjmp/lush.nvim",
+	})
 	use("xiyaowong/nvim-transparent") -- transparent background
 
 	-- tmux & split window navigation

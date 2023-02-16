@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -216,6 +221,11 @@ _G.packer_plugins = {
     path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["seoul256.nvim"] = {
+    loaded = true,
+    path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/seoul256.nvim",
+    url = "https://github.com/shaunsingh/seoul256.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -240,6 +250,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["zenbones.nvim"] = {
+    loaded = true,
+    path = "/home/codeyman2/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 
