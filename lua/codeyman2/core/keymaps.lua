@@ -29,8 +29,8 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+keymap.set("n", "<leader>sh", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>sv", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
@@ -48,15 +48,15 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
-local builtin = require('telescope.builtin')
-keymap.set('n', '<leader>ff', builtin.find_files, {})
-keymap.set('n', '<leader>fg', builtin.live_grep, {})
-keymap.set('n', '<leader>fb', builtin.buffers, {})
-keymap.set('n', '<leader>fh', builtin.help_tags, {})
-keymap.set('n', '<leader>fs', function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ")})
+local builtin = require("telescope.builtin")
+keymap.set("n", "<leader>ff", builtin.find_files, {})
+keymap.set("n", "<leader>fg", builtin.live_grep, {})
+keymap.set("n", "<leader>fb", builtin.buffers, {})
+keymap.set("n", "<leader>fh", builtin.help_tags, {})
+keymap.set("n", "<leader>fs", function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-keymap.set('n', '<leader>fh', builtin.help_tags, {})
+keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- undotree
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)

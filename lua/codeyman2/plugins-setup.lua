@@ -136,6 +136,34 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- repeat
+	use("tpope/vim-repeat")
+
+	-- leap
+	use({
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").set_default_keymaps()
+		end,
+	})
+
+	-- fold
+	use({
+		"kevinhwang91/nvim-ufo",
+		requires = "kevinhwang91/promise-async",
+	})
+
+	-- auto sessions
+	use({
+		"rmagatti/auto-session",
+		config = function()
+			require("auto-session").setup({
+				log_level = "error",
+				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			})
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
