@@ -164,6 +164,36 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Tint active window
+	use({
+		"levouh/tint.nvim",
+		config = function()
+			require("tint").setup()
+		end,
+	})
+
+	-- Smooth scrolling
+	use("karb94/neoscroll.nvim")
+
+	-- Indent lines
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			vim.opt.list = true
+			-- vim.opt.listchars:append("space:⋅")
+			-- vim.opt.listchars:append("eol:↴")
+
+			require("indent_blankline").setup({
+				space_char_blankline = " ",
+				show_current_context = true,
+				show_current_context_start = true,
+			})
+		end,
+	})
+
+	-- Scroll map
+	use("echasnovski/mini.map")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
