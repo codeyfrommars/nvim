@@ -36,6 +36,15 @@ lualine_seoul256.command = {
 		fg = colors.bg, -- black
 	},
 }
+
+lualine_seoul256.replace = {
+	a = {
+		gui = "bold",
+		bg = colors.purple,
+		fg = colors.bg, -- black
+	},
+}
+
 -- configure lualine with modified theme
 lualine.setup({
 	options = {

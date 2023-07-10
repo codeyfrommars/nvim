@@ -36,8 +36,8 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
-		"clang_format",
-		"cpplint",
+		-- "clang_format",
+		-- "cpplint",
 		"pylint",
 	},
 	-- auto-install configured formatters & linters (with null-ls)

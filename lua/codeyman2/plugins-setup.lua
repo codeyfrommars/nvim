@@ -194,6 +194,29 @@ return packer.startup(function(use)
 	-- Scroll map
 	use("echasnovski/mini.map")
 
+	-- Modicator (line number color based off mode)
+	-- use({
+	-- 	"mawkler/modicator.nvim",
+	-- 	after = "seoul256.nvim", -- Add your colorscheme plugin here
+	-- 	setup = function()
+	-- 		-- These are required for Modicator to work
+	-- 		vim.o.cursorline = true
+	-- 		vim.o.number = true
+	-- 		vim.o.termguicolors = true
+	-- 	end,
+	-- 	config = function()
+	-- 		require("modicator").setup()
+	-- 	end,
+	-- })
+
+	-- noice (UI for messages, cmdline, and popupmenu)
+	use("MunifTanjim/nui.nvim")
+	use("rcarriga/nvim-notify")
+	use({ "folke/noice.nvim" })
+
+	-- sniprun (run snippets of code within editor)
+	use({ "michaelb/sniprun", run = "sh ./install.sh" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

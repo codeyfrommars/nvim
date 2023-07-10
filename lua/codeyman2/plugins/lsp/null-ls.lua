@@ -19,8 +19,8 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
-		formatting.clang_format,
-		diagnostics.cpplint,
+		-- formatting.clang_format,
+		-- diagnostics.cpplint,
 		diagnostics.pylint,
 	},
 	-- configure format on save
