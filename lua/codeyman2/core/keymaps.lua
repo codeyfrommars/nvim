@@ -4,6 +4,12 @@ local keymap = vim.keymap -- for conciseness
 
 -- general keymaps
 
+-- remap $ and ^
+keymap.set("n", "H", "^")
+keymap.set("n", "L", "$")
+keymap.set("v", "H", "^")
+keymap.set("v", "L", "$")
+
 -- move visual block
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")

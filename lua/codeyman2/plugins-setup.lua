@@ -30,8 +30,9 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	-- use("bluz71/vim-nightfly-guicolors") -- color scheme
-	use("rose-pine/neovim") -- color scheme
+	------------ Colorschemes -------------
+	use("bluz71/vim-nightfly-guicolors")
+	use("rose-pine/neovim")
 	use("shaunsingh/seoul256.nvim")
 	use({
 		"mcchrish/zenbones.nvim",
@@ -40,6 +41,9 @@ return packer.startup(function(use)
 		-- In Vim, compat mode is turned on as Lush only works in Neovim.
 		requires = "rktjmp/lush.nvim",
 	})
+	use("arzg/vim-colors-xcode")
+	use({ "ellisonleao/gruvbox.nvim" })
+	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use("xiyaowong/nvim-transparent") -- transparent background
 
 	-- tmux & split window navigation
@@ -83,23 +87,32 @@ return packer.startup(function(use)
 	-- undo tree
 	use("mbbill/undotree")
 
-	-- autocompletion
-	use("hrsh7th/nvim-cmp") -- completion plugin
-	use("hrsh7th/cmp-buffer") -- source for text in buffer
-	use("hrsh7th/cmp-path") -- source for file system paths
+	-- LSP Zero
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v2.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" }, -- Required
+			{ -- Optional
+				"williamboman/mason.nvim",
+				run = function()
+					pcall(vim.cmd, "MasonUpdate")
+				end,
+			},
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
-	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-	use("rafamadriz/friendly-snippets") -- useful snippets
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "rafamadriz/friendly-snippets" },
+			{ "L3MON4D3/LuaSnip" }, -- Required
+		},
+	})
 
-	-- managing & installing lsp servers, linters & formatters
-	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
-
-	-- configuring lsp servers
-	use("neovim/nvim-lspconfig") -- easily configure language servers
-	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
@@ -107,8 +120,9 @@ return packer.startup(function(use)
 			{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
-	}) -- enhanced lsp uis
-	-- use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+	})
+
+	-- enhanced lsp uis
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- formatting & linting
@@ -211,7 +225,12 @@ return packer.startup(function(use)
 
 	-- noice (UI for messages, cmdline, and popupmenu)
 	use("MunifTanjim/nui.nvim")
-	use("rcarriga/nvim-notify")
+	use({
+		"rcarriga/nvim-notify",
+		config = function()
+			require("notify").setup()
+		end,
+	})
 	use({ "folke/noice.nvim" })
 
 	-- sniprun (run snippets of code within editor)

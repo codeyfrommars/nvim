@@ -63,6 +63,7 @@ lspconfig.clangd.setup({
 		completeUnimported = true,
 		semanticHighlighting = true,
 	},
+	on_attach = on_attach,
 })
 
 lspconfig["ltex"].setup({
