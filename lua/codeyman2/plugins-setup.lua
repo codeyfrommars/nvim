@@ -229,7 +229,9 @@ return packer.startup(function(use)
 	use({
 		"rcarriga/nvim-notify",
 		config = function()
-			require("notify").setup()
+			require("notify").setup({
+				stages = "slide",
+			})
 		end,
 	})
 	use({ "folke/noice.nvim" })

@@ -66,3 +66,7 @@ keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- undotree
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- notify
+local notify = require("notify")
+keymap.set("n", "<leader>nn", notify.dismiss, {})
