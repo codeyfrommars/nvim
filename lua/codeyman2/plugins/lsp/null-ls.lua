@@ -20,9 +20,11 @@ null_ls.setup({
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.black,
+		-- formatting.yamlfmt,
 		-- formatting.clang_format,
-		diagnostics.cpplint,
+		-- diagnostics.cpplint,
 		diagnostics.pylint,
+		diagnostics.yamllint,
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

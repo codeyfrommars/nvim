@@ -50,6 +50,7 @@ require("mason-lspconfig").setup({
 		"clangd",
 		"ltex",
 		"jedi_language_server",
+		"yamlls",
 	},
 
 	automatic_installation = true,
@@ -63,6 +64,8 @@ require("mason-null-ls").setup({
 		"black", -- python formatter
 		"cpplint",
 		"pylint",
+		"yamlfmt",
+		"yamllint",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
@@ -109,4 +112,60 @@ cmp.setup({
 			ellipsis_char = "...",
 		}),
 	},
+})
+
+cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline({
+		["<C-j>"] = {
+			c = function()
+				local cmp = require("cmp")
+				if cmp.visible() then
+					cmp.select_next_item()
+				else
+					cmp.complete()
+				end
+			end,
+		},
+		["<C-k>"] = {
+			c = function()
+				local cmp = require("cmp")
+				if cmp.visible() then
+					cmp.select_prev_item()
+				else
+					cmp.complete()
+				end
+			end,
+		},
+		["<Tab>"] = {
+			c = function(fallback)
+				local cmp = require("cmp")
+				if cmp.visible() then
+					cmp.select_next_item()
+				else
+					fallback()
+				end
+			end,
+		},
+		["<S-Tab>"] = {
+			c = function(fallback)
+				local cmp = require("cmp")
+				if cmp.visible() then
+					cmp.select_prev_item()
+				else
+					fallback()
+				end
+			end,
+		},
+		["<C-e>"] = {
+			c = cmp.mapping.abort(),
+		},
+		["<CR>"] = {
+			c = cmp.mapping.confirm({ select = false }),
+		},
+	}),
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
 })
