@@ -20,9 +20,9 @@ null_ls.setup({
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.black,
-		-- formatting.yamlfmt,
-		-- formatting.clang_format,
-		-- diagnostics.cpplint,
+		formatting.yamlfmt,
+		formatting.clang_format,
+		diagnostics.cpplint,
 		diagnostics.pylint,
 		diagnostics.yamllint,
 	},
