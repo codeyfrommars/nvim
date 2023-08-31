@@ -43,6 +43,7 @@ lsp.on_attach(function(client, bufnr)
 		vim.lsp.buf.signature_help()
 	end, opts)
 end)
+
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -51,6 +52,8 @@ require("mason-lspconfig").setup({
 		"ltex",
 		"jedi_language_server",
 		"yamlls",
+		"jdtls",
+		-- "matlab-ls",
 	},
 
 	automatic_installation = true,
@@ -77,6 +80,8 @@ require("lspconfig").lua_ls.setup({})
 
 -- (Optional) Configure lua language server for neovim
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.skip_server_setup({ "jdtls" }) -- Skip jdtls bc we use nvim-jdtls instead
 
 lsp.setup()
 

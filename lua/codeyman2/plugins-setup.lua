@@ -46,6 +46,8 @@ return packer.startup(function(use)
 	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use("xiyaowong/nvim-transparent") -- transparent background
 
+	------------ QoL functions -------------
+
 	-- tmux & split window navigation
 	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer") -- maximizes and restores current window
@@ -59,12 +61,6 @@ return packer.startup(function(use)
 
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
-
-	-- vs-code like icons
-	use("nvim-tree/nvim-web-devicons")
-
-	-- statusline
-	use("nvim-lualine/lualine.nvim")
 
 	-- fuzzy finding w/ telescope
 	use({
@@ -86,6 +82,11 @@ return packer.startup(function(use)
 
 	-- undo tree
 	use("mbbill/undotree")
+
+	-- git integration
+	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	------------ LSP -------------
 
 	-- LSP Zero
 	use({
@@ -134,8 +135,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-	-- git integration
-	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+	------------ Keymaps -------------
 
 	-- keymap cheat sheet
 	use({
@@ -179,6 +179,14 @@ return packer.startup(function(use)
 		end,
 	})
 
+	------------ Cosmetics -------------
+
+	-- vs-code like icons
+	use("nvim-tree/nvim-web-devicons")
+
+	-- statusline
+	use("nvim-lualine/lualine.nvim")
+
 	-- Tint active window
 	use({
 		"levouh/tint.nvim",
@@ -209,21 +217,6 @@ return packer.startup(function(use)
 	-- Scroll map
 	use("echasnovski/mini.map")
 
-	-- Modicator (line number color based off mode)
-	-- use({
-	-- 	"mawkler/modicator.nvim",
-	-- 	after = "seoul256.nvim", -- Add your colorscheme plugin here
-	-- 	setup = function()
-	-- 		-- These are required for Modicator to work
-	-- 		vim.o.cursorline = true
-	-- 		vim.o.number = true
-	-- 		vim.o.termguicolors = true
-	-- 	end,
-	-- 	config = function()
-	-- 		require("modicator").setup()
-	-- 	end,
-	-- })
-
 	-- noice (UI for messages, cmdline, and popupmenu)
 	use("MunifTanjim/nui.nvim")
 	use({
@@ -236,8 +229,15 @@ return packer.startup(function(use)
 	})
 	use({ "folke/noice.nvim" })
 
+	------------ Language -------------
+
 	-- sniprun (run snippets of code within editor)
 	use({ "michaelb/sniprun", run = "sh ./install.sh" })
+
+	-- nvim-jdtls (Java lsp)
+	use("mfussenegger/nvim-jdtls")
+
+	use("mfussenegger/nvim-dap")
 
 	if packer_bootstrap then
 		require("packer").sync()
