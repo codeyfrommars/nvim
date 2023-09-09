@@ -47,6 +47,13 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- plugin keymaps
 
+-- navigator
+keymap.set({ "n", "t" }, "<C-Left>", "<CMD>NavigatorLeft<CR>")
+keymap.set({ "n", "t" }, "<C-Right>", "<CMD>NavigatorRight<CR>")
+keymap.set({ "n", "t" }, "<C-Up>", "<CMD>NavigatorUp<CR>")
+keymap.set({ "n", "t" }, "<C-Down>", "<CMD>NavigatorDown<CR>")
+-- keymap.set({'n', 't'}, '<A-p>', '<CMD>NavigatorPrevious<CR>')
+
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 

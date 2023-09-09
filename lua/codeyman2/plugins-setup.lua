@@ -49,7 +49,12 @@ return packer.startup(function(use)
 	------------ QoL functions -------------
 
 	-- tmux & split window navigation
-	use("christoomey/vim-tmux-navigator")
+	use({
+		"numToStr/Navigator.nvim",
+		config = function()
+			require("Navigator").setup()
+		end,
+	})
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	-- essential plugins
