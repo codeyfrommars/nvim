@@ -44,6 +44,8 @@ return packer.startup(function(use)
 	use("arzg/vim-colors-xcode")
 	use({ "ellisonleao/gruvbox.nvim" })
 	use({ "nyoom-engineering/oxocarbon.nvim" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	use("xiyaowong/nvim-transparent") -- transparent background
 
 	------------ QoL functions -------------
