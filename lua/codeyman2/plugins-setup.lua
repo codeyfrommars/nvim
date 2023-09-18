@@ -246,6 +246,17 @@ return packer.startup(function(use)
 
 	use("mfussenegger/nvim-dap")
 
+	-- neogen (generate annotations, e.g. javadoc)
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({})
+		end,
+		requires = "nvim-treesitter/nvim-treesitter",
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
