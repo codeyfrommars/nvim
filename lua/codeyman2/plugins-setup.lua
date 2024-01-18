@@ -72,7 +72,7 @@ return packer.startup(function(use)
 	-- fuzzy finding w/ telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
+		tag = "0.1.4",
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
@@ -92,6 +92,14 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	-- Docker remote dev
+	use({
+		"esensar/nvim-dev-container",
+		config = function()
+			require("devcontainer").setup({})
+		end,
+	})
 
 	------------ LSP -------------
 
@@ -245,6 +253,9 @@ return packer.startup(function(use)
 	use("mfussenegger/nvim-jdtls")
 
 	use("mfussenegger/nvim-dap")
+
+	-- Latex
+	use("lervag/vimtex")
 
 	-- neogen (generate annotations, e.g. javadoc)
 	use({

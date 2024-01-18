@@ -69,6 +69,7 @@ require("mason-null-ls").setup({
 		"pylint",
 		"yamlfmt",
 		"yamllint",
+		"latexindent",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
